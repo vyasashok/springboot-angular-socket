@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
-import $ from 'jquery';
+//import $ from 'jquery';
+
+declare var $;
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ import $ from 'jquery';
 })
 export class AppComponent {
   private serverUrl = 'http://localhost:8080/socket'
-  private title = 'WebSockets chat';
+  public title = 'WebSockets chat';
   private stompClient;
 
   constructor(){
@@ -25,6 +27,7 @@ export class AppComponent {
     this.stompClient.connect({}, function(frame) {
       that.stompClient.subscribe("/chat", (message) => {
         if(message.body) {
+          
           $(".chat").append("<div class='message'>"+message.body+"</div>")
           console.log(message.body);
         }

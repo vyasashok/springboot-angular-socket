@@ -67,30 +67,30 @@
 						</configuration>
 					</execution>
 					<execution>
-						<id>npm i save stompjs</id>
+						<id>npm i save @types/stompjs</id>
 						<goals>
 							<goal>npm</goal>
 						</goals>
 						<configuration>
-							<arguments>install save stompjs</arguments>
+							<arguments>install save @types/stompjs</arguments>
 						</configuration>
 					</execution>
 					<execution>
-						<id>npm i save sockjs-client</id>
+						<id>npm i save @types/sockjs-client</id>
 						<goals>
 							<goal>npm</goal>
 						</goals>
 						<configuration>
-							<arguments>install save sockjs-client</arguments>
+							<arguments>install save @types/sockjs-client</arguments>
 						</configuration>
 					</execution>
 					<execution>
-						<id>npm i save jquery</id>
+						<id>npm i save @types/jquery</id>
 						<goals>
 							<goal>npm</goal>
 						</goals>
 						<configuration>
-							<arguments>install save jquery</arguments>
+							<arguments>install save @types/jquery</arguments>
 						</configuration>
 					</execution>
 					<execution>
