@@ -1,0 +1,149 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ashok.websocket</groupId>
+    <artifactId>websocket-project</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.ashok.websocket-frontend</groupId>
+  <artifactId>websocket-frontend</artifactId>
+  <packaging>war</packaging>
+  	<properties>
+		<buildtimestamp>${maven.build.timestamp}</buildtimestamp>
+		<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+		<uiversion>ve-2.2.3.01-SNAPSHOT</uiversion>
+	</properties>
+	<build>
+		<!-- resources>
+			<resource>
+				<directory>src/websocket-frontend/dist/websocket-frontend</directory>
+				<includes>
+					<include>index.html</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources-->
+		<plugins>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<inherited>false</inherited>
+				<configuration>
+					<filesets>
+						<!-- fileset>
+							<directory>target</directory>
+						</fileset-->
+						<fileset>
+							<directory>src/websocket-frontend/dist</directory>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.6</version>
+				<configuration>
+					<nodeVersion>v10.9.0</nodeVersion>
+					<npmVersion>6.9.0</npmVersion>
+					<workingDirectory>src/websocket-frontend</workingDirectory>
+					<environmentVariables>
+						<XDG_CONFIG_HOME>./config</XDG_CONFIG_HOME>
+					</environmentVariables>
+				</configuration>
+				<executions>
+					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>npm i save @angular/material @angular/cdk</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>install save @angular/material @angular/cdk</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>npm i save stompjs</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>install save stompjs</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>npm i save sockjs-client</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>install save sockjs-client</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>npm i save jquery</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>install save jquery</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>npm run-script prod</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>run-script prod</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<outputDirectory>target/classes</outputDirectory>
+					<resources>
+						<resource>
+							<directory>src/websocket-frontend/dist/websocket-frontend</directory>
+							<includes>
+								<include>index.html</include>
+							</includes>
+							<filtering>true</filtering>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<warSourceDirectory>src/websocket-frontend/dist/websocket-frontend</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warName>ROOT</warName>
+					<webResources>
+						<webResource>
+							<directory>target/classes</directory>
+							<includes>
+								<include>index.html</include>
+							</includes>
+						</webResource>
+					</webResources>
+				</configuration>
+			</plugin-->
+		</plugins>
+	</build>
+</project>
