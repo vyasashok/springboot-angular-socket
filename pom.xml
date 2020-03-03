@@ -12,5 +12,6 @@
   <modules>
   	<module>websocket-frontend</module>
   	<module>websocket-backend</module>
+  	<module>websocket-distribution</module>
   </modules>
 </project>

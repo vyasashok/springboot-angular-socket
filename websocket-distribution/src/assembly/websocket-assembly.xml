@@ -1,0 +1,26 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+
+	<id>final</id>
+
+	<formats>
+		<format>zip</format>
+	</formats>
+
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>.ebextensions</directory>
+		</fileSet>
+	</fileSets>
+	<files>
+		<file>
+			<source>../websocket-frontend/target/ROOT.war</source>
+		</file>
+		<file>
+			<source>../websocket-backend/target/websocket-backend.war</source>
+		</file>
+	</files>
+</assembly>
