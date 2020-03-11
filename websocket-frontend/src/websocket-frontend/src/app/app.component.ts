@@ -11,7 +11,8 @@ declare var $;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private serverUrl = 'http://localhost:8080/socket'
+  //private serverUrl = 'http://localhost:8080/socket'
+  private serverUrl = 'http://localhost:8080/websocket-backend/socket'
   public title = 'WebSockets chat';
   private stompClient;
 

@@ -9,6 +9,15 @@
   <artifactId>websocket-project</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  
+  <properties>
+	<revision>0.0.1-SNAPSHOT</revision>
+	<deploy.dir>D:\Software1\apache-tomcat-8.0.48\webapps</deploy.dir>
+	<mybatis.springboot.version>1.3.2</mybatis.springboot.version>
+	<mybatis.version>3.4.6</mybatis.version>
+	<maven.compiler.target>1.8</maven.compiler.target>
+	<maven.compiler.source>1.8</maven.compiler.source>
+  </properties>
   <modules>
   	<module>websocket-frontend</module>
   	<module>websocket-backend</module>

@@ -33,4 +33,56 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>local</id>
+			<build>
+				<plugins>
+					<plugin>
+			            <artifactId>maven-resources-plugin</artifactId>
+			            <version>2.7</version>
+			            <executions>
+			                <execution>
+			                    <id>deploy-zip</id>
+			                    <phase>install</phase>
+			                    <goals>
+			                        <goal>copy-resources</goal>
+			                    </goals>
+			                    <configuration>
+			                        <outputDirectory>${deploy.dir}</outputDirectory>
+			                        <resources>
+			                            <resource>
+			                                <directory>/target</directory>
+			                                <includes>
+			                                    <include>*.zip</include>
+			                                </includes>
+			                            </resource>
+			                        </resources>
+			                    </configuration>
+			                </execution>
+			           </executions>
+			        </plugin>
+			        <plugin>
+				      <artifactId>maven-antrun-plugin</artifactId>
+				      <version>1.8</version>
+				      <executions>
+				         <execution>
+				            <phase>install</phase>
+				            <configuration>
+				               <tasks>
+				                  <echo message="unzipping file" />
+				                  <unzip src="${deploy.dir}/websocket-0.0.1-SNAPSHOT-final.zip" dest="${deploy.dir}" />
+				                  <move file="${deploy.dir}/websocket-backend.war" tofile="${deploy.dir}/websocket-backend.war"/>
+				               </tasks>
+				            </configuration>
+				            <goals>
+				               <goal>run</goal>
+				            </goals>
+				         </execution>
+				      </executions>
+				   </plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
