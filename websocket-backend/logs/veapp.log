@@ -1,0 +1,5 @@
+2020-03-11 13:33:56,092 INFO o.s.b.StartupInfoLogger [main] Starting App on L10INMUM01D2507 with PID 20100 (C:\Users\asvyas\git\springboot-angular-socket\websocket-backend\target\classes started by asvyas in C:\Users\asvyas\git\springboot-angular-socket\websocket-backend)
+2020-03-11 13:33:56,097 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2020-03-11 13:33:56,097 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-03-11 13:33:58,970 INFO o.s.b.StartupInfoLogger [main] Started App in 3.094 seconds (JVM running for 3.953)
+2020-03-11 13:34:12,848 DEBUG c.a.w.c.WebSocketController [clientInboundChannel-7] hgh
